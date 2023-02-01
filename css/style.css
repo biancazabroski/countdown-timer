@@ -14,22 +14,32 @@ html, body {
   }
   
 main {
+    color: #FFFFFF;
     align-items: center;
-    background-color: #7dd6d0;
+    background-color: #62B1B6;
     display: flex;
-    font-family: monospace;
+    font-family: 'Courier New', Courier, monospace;
   }
+#startButton {
+    font-size: 15px;
+    border-color: rgba(148, 146, 146, 0.41);
+    padding: 5px;
+    outline: 0;
+    background-color: rgba(255, 255, 255, 0.047);
+    color: #ffffff; 
+    font-weight: bold;
+    transition: all ease 0.3s;
+}
 .clock-input {
     text-align: left;
     display: inline-block;
 }
   
 .container {
-    color: #333;
     margin: 0 auto;
     text-align: center;
   }
-  
+
 h1 {
     font-weight: normal;
     letter-spacing: .125rem;
