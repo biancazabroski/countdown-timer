@@ -1,3 +1,14 @@
+html {
+    background-color: #598B8E;
+
+}
+
+body {
+    background-color: #598B8E;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
 main {
     color: #FFFFFF;
     align-items: center;
@@ -80,4 +91,9 @@ li {
 li span {
     display: inline-block;
     margin-top: 35px;
+}
+footer {
+    background-color: #598B8E;
+    margin-top: auto;
+    text-align: center;
 }
