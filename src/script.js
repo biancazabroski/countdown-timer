@@ -15,3 +15,4 @@ startButton.addEventListener("click", Start);
         startButton.value = "Start";
     }
 }
+
