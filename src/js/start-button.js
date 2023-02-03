@@ -1,16 +1,17 @@
-window.onload = function() { const startButton = document.getElementById("startButton");
-startButton.addEventListener("click", Start);
+function startButton() { 
+const button = document.querySelector(".start");
+button.addEventListener("click", Start);
 
     function Start() {
-        startButton.removeEventListener("click", Start);
-        startButton.addEventListener("click", Stop);
-        startButton.value = "Stop";
+        button.removeEventListener("click", Start);
+        button.addEventListener("click", Stop);
+        button.value = "Stop";
     }
 
     function Stop() {
-        startButton.removeEventListener("click", Stop);
-        startButton.addEventListener("click", Start);
-        startButton.value = "Start";
+        button.removeEventListener("click", Stop);
+        button.addEventListener("click", Start);
+        button.value = "Start";
     }
 }
 

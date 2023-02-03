@@ -1,6 +1,5 @@
 html {
     background-color: #598B8E;
-
 }
 
 body {
@@ -27,7 +26,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     filter: invert(0.8) brightness(50%) sepia(0%) saturate(10000%) hue-rotate(240deg);
 }
-#startButton {
+.start {
     display: inline-block;
     position: relative;    
     font-size: 15px;
@@ -94,6 +93,8 @@ li span {
 }
 footer {
     background-color: #598B8E;
+    color: #3b3f3f;
     margin-top: auto;
     text-align: center;
+    font-size: 10px;
 }
