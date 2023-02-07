@@ -3,19 +3,14 @@ const countdownTimer = () => {
     const now = new Date().getTime();
     const timeLeft = countDate - now;
 
-    const seconds = 1000;
-    const minutes = seconds * 60;
-    const hours = minutes * 60;
-    const days = hours * 24;
+    const days = Math.floor(timeLeft /  (1000 * 60 * 60 * 24));
+    const hours =  Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes =  Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds =  Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    const daysLeft = Math.floor(timeLeft / days);
-    const hoursLeft =  Math.floor((timeLeft % days) / hours);
-    const minutesLeft =  Math.floor((timeLeft % hours) / minutes);
-    const secondsLeft =  Math.floor((timeLeft % minutes) / seconds);
-
-    document.getElementById('days').innerText = "\n" + daysLeft + "\n" + " days";
-    document.getElementById('hours').innerText = "\n" + hoursLeft + "\n" + " hours";
-    document.getElementById('minutes').innerText = "\n" + minutesLeft + "\n" + " minutes";
-    document.getElementById('seconds').innerText = "\n" + secondsLeft + "\n" + " seconds";
+    document.getElementById('days').innerText = "\n" + days + "\n" + " days";
+    document.getElementById('hours').innerText = "\n" + hours + "\n" + " hours";
+    document.getElementById('minutes').innerText = "\n" + minutes + "\n" + " minutes";
+    document.getElementById('seconds').innerText = "\n" + seconds + "\n" + " seconds";
 }
 
