@@ -5,42 +5,48 @@
     box-sizing: border-box;
 }
 
-
 body {
     position: relative;
     min-height: 100vh;
     padding: 2rem;
 }
 main {
+    position: absolute;
     color: #FFFFFF;
-    align-items: center;
     background-color: #598B8E;
     font-family: 'Courier New', Courier, monospace;
 }
 .form-container {
     text-align: center;
+    background-color: #598B8E;
+    padding-bottom: 10px;
 }
 h2 {
+    text-align: center;
     padding-top: 50px;
 }
 input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     filter: invert(0.8) brightness(50%) sepia(0%) saturate(10000%) hue-rotate(240deg);
 }
-
-.start-button {
-    height: 29px;
-    width: 156px;
+#start-button {
     background-color: #4C5152;
-    color: #ffffff; 
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 24px;
+  
 }
 #eventName {
+    padding-left: 12px;
+    padding-right: 12px;
     font-size: 14px;
     border-color: #ffffff00;
     background-color: #D9D9D9;
     border-radius: 5px;
 }
 #eventDate {
+    padding-left: 12px;
+    padding-right: 11px;
     font-size: 14px;
     color: #7d7f80;
     border-color: #ffffff00;
