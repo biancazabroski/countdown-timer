@@ -1,59 +1,48 @@
-html {
-    background-color: #598B8E;
+*, *::after, *::before {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+
 body {
-    background-color: #598B8E;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
+    position: relative;
+    min-height: 100vh;
+    padding: 2rem;
 }
 main {
     color: #FFFFFF;
     align-items: center;
     background-color: #598B8E;
-    display: flex;
     font-family: 'Courier New', Courier, monospace;
+}
+.form-container {
+    text-align: center;
 }
 h2 {
     padding-top: 50px;
 }
-input[type="date"]::-webkit-calendar-picker-indicator {
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     filter: invert(0.8) brightness(50%) sepia(0%) saturate(10000%) hue-rotate(240deg);
 }
-input[type="time"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-    filter: invert(0.8) brightness(50%) sepia(0%) saturate(10000%) hue-rotate(240deg);
-}
-.start {
-    display: inline-block;
-    position: relative;    
-    font-size: 15px;
+
+.start-button {
     height: 29px;
-    width: 90px;
-    border-color: rgba(114, 188, 177, 0.41);
+    width: 156px;
     background-color: #4C5152;
     color: #ffffff; 
-    transition: all ease 0.3s;
 }
 #eventName {
     font-size: 14px;
-    color: #4C5152;
     border-color: #ffffff00;
     background-color: #D9D9D9;
     border-radius: 5px;
 }
 #eventDate {
     font-size: 14px;
-    color: #4C5152;
-    border-color: #ffffff00;
-    background-color: #D9D9D9;
-    border-radius: 5px;
-}
-#optionalTime {
-    font-size: 14px;
-    color: #4C5152;
+    color: #7d7f80;
     border-color: #ffffff00;
     background-color: #D9D9D9;
     border-radius: 5px;
@@ -62,12 +51,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-top: 100px;
     font-size: 20px;
 }
-.clock-input {
+.event-form {
     text-align: left;
     display: inline-block;
 }
   
-.container {
+.countdown-timer {
     margin: 0 auto;
     text-align: center;
 }
@@ -91,10 +80,4 @@ li span {
     display: inline-block;
     margin-top: 35px;
 }
-footer {
-    background-color: #598B8E;
-    color: #3b3f3f;
-    margin-top: auto;
-    text-align: center;
-    font-size: 10px;
-}
+
