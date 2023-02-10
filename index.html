@@ -29,27 +29,20 @@
                 <input type="datetime-local" class="date" id="eventDate" required>
               </label>
            </div>
-           <button type="submit" class="btn btn-outline-secondary" id="start-button">Start<svg width="27" height="22" fill="none" viewBox="-5 0 29 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.25 12L5.75 5.75V18.25L18.25 12Z"></path>
-          </svg></button>
+           <button type="submit" class="rounded btn-sm" id="start-button" onclick="getDate()">Start</button>
         </form>
       </div>
 
     <div class="countdown-timer">
         <h1 id="eventHeadline">event name</h1>
-        <div id="countdown">
-        <button type="submit" class="btn btn-outline-secondary" id="stop-button">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <rect width="12.5" height="12.5" x="5.75" y="5.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" rx="1"></rect>
-          </svg>      
-        </button>    
             <ul>
                 <li id="days"><span>days</span></li>
                 <li id="hours"><span>hours</span></li>
                 <li id="minutes"><span>minutes</span></li>
                 <li id="seconds"><span>seconds</span></li>
             </ul>
-        </div>
+            <button type="submit" class="rounded btn-sm" id="stop-button">Stop</button> 
+    </div>
    </main>
     <script src="src/js/countdown-main.js"></script>
   </body>
