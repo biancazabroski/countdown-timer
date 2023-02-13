@@ -1,4 +1,3 @@
-const formContainer = document.querySelector(".form-container")
 
 $('#event-form').submit(function(e){
     e.preventDefault()
@@ -8,6 +7,8 @@ $('#event-form').submit(function(e){
 function startCountDown() {
     const name = document.querySelector('.event-name').value
     document.querySelector('#eventHeadline').textContent = name
+
+    setInterval(countdownCalculator, 1000)
 }
 function handleDate() {
     const date = document.querySelector(".date").value
@@ -19,7 +20,6 @@ function handleDate() {
 }
 
 function countdownCalculator() {
-    var myInterval = setInterval(countdownCalculator, 1000)
     
     const date = handleDate()
     const countDate = new Date(date).getTime();
@@ -41,8 +41,7 @@ function countdownCalculator() {
     minutesLi.innerText = "\n" + minutes + "\n" + " minutes";
     secondsLi.innerText = "\n" + seconds + "\n" + " seconds";
 
-    if(now >= countDate) {
-        clearInterval(myInterval)
+    if(days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
         Swal.fire({
             title: 'Event finished!',
             text: '',
@@ -52,11 +51,12 @@ function countdownCalculator() {
             imageHeight: 160,
             imageAlt: 'Party Confetti',
           })
-          daysLi.innerText = "\n" + "D" + "\n" + " days";
-          hoursLi.innerText = "\n" + "O" + "\n" + " hours";
-          minutesLi.innerText = "\n" + "N" + "\n" + " minutes";
-          secondsLi.innerText = "\n" + "E" + "\n" + " seconds";
+
+    } else if(now >= countDate) {
+
+        daysLi.innerText = "\n" + "D" + "\n" + " days";
+        hoursLi.innerText = "\n" + "O" + "\n" + " hours";
+        minutesLi.innerText = "\n" + "N" + "\n" + " minutes";
+        secondsLi.innerText = "\n" + "E" + "\n" + " seconds";
     }
 }
-
-
