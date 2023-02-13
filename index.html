@@ -13,8 +13,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 </head>
   <body>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
+    <script
+    src="https://code.jquery.com/jquery-3.6.3.js"
+    integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
    <main>
     <div class="form-container">
         <form id="event-form" class="event-form">
@@ -26,7 +28,10 @@
            </div>  
            <div>
               <label for="date">
-                <input type="datetime-local" class="date" id="eventDate" required>
+                <input type="date" class="date" id="eventDate" required>
+              </label>
+              <label for="date2">
+                <input type="time" class="time" id="eventTime">
               </label>
            </div>
            <button type="submit" class="rounded btn-sm" id="start-button">Start</button>
