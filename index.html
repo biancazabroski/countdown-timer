@@ -19,34 +19,34 @@
     crossorigin="anonymous"></script>
    <main>
     <div class="form-container">
-        <form id="event-form" class="event-form">
+        <form class="event-form">
           <h2 class="form-title">New Event</h2>
            <div>
-            <label for="name">
-              <input type="text" class="event-name" id="eventName" placeholder="Type your event name" required>
+            <label class="float-left" for="name">
+              <input type="text" class="event-name" placeholder="Type your event name" required>
             </label>
            </div>  
            <div>
               <label for="date">
-                <input type="date" class="date" id="eventDate" required>
+                <input type="date" class="date" required>
               </label>
-              <label for="date2">
-                <input type="time" class="time" id="eventTime">
+              <label for="time">
+                <input type="time" class="time">
               </label>
            </div>
            <button type="submit" class="rounded btn-sm" id="start-button">Start</button>
         </form>
       </div>
 
-    <div class="countdown-timer">
-        <h1 id="eventHeadline">event name</h1>
+    <div class="countdown-timer mx-auto">
+        <h1 class="event-headline">event name</h1>
             <ul>
                 <li id="days"><span>days</span></li>
                 <li id="hours"><span>hours</span></li>
                 <li id="minutes"><span>minutes</span></li>
                 <li id="seconds"><span>seconds</span></li>
             </ul>
-            <button type="submit" class="rounded btn-sm" id="clear-button">Clear</button> 
+            <button type="submit" class="rounded btn-sm float-right" id="clear-button">Clear</button> 
     </div>
    </main>
     <script src="src/js/countdown-main.js"></script>
