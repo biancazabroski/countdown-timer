@@ -1,9 +1,6 @@
-let eventInfo = []
-
 function saveToLocalStorage(name, time) {
     const countdown = JSON.parse(window.localStorage.getItem('countdowns'))
     if(!countdown) {
-        console.log(countdown)
         window.localStorage.setItem('countdowns', JSON.stringify([{
             id: 0,
             name: name,
@@ -21,6 +18,8 @@ function saveToLocalStorage(name, time) {
     loadItems()
 }
 
+let interval;
+
 function loadItems() {
 
 const countdown = JSON.parse(window.localStorage.getItem('countdowns'))
@@ -35,12 +34,13 @@ for(let i = 0; i < countdown.length; i++) {
 
 
     let rowName = row.insertCell()
-
     rowName.innerText = countdown[i].name
+
     rowName.onclick = function() {
+        clearInterval(interval)
         document.querySelector('.event-headline').textContent = countdown[i].name
         startCountDown(countdown[i].id)
-    }
+            }
         }
     }
 }
@@ -58,10 +58,9 @@ $('.event-form').submit(function(e){
     saveToLocalStorage(name, treatDate)
 })
 
-
-
 function startCountDown(id) {
-    setInterval(() => {
+    clearInterval(interval)
+    interval = setInterval(() => {
         countdownCalculator(id)
     }, 1000)
 }
