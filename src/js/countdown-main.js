@@ -1,5 +1,7 @@
+//armazenamento dos dados no localStorage
 function saveToLocalStorage(name, time) {
     const countdown = JSON.parse(window.localStorage.getItem('countdowns'))
+
     if(!countdown) {
         window.localStorage.setItem('countdowns', JSON.stringify([{
             id: 0,
@@ -14,15 +16,14 @@ function saveToLocalStorage(name, time) {
         })
         window.localStorage.setItem('countdowns', JSON.stringify(countdown))
     }
-
     loadItems()
 }
 
+// adiciona os countdowns a tabela, e os inicia caso clicados 
 let interval;
 
 function loadItems() {
-
-const countdown = JSON.parse(window.localStorage.getItem('countdowns'))
+    const countdown = JSON.parse(window.localStorage.getItem('countdowns'))
 
 if(countdown) {
 let tbody = document.getElementById('tbody')
@@ -31,7 +32,6 @@ tbody.innerHTML = ""
 
 for(let i = 0; i < countdown.length; i++) {
     let row = tbody.insertRow()
-
 
     let rowName = row.insertCell()
     rowName.innerText = countdown[i].name
@@ -45,6 +45,7 @@ for(let i = 0; i < countdown.length; i++) {
     }
 }
 
+// chama o inicio do countdown e puxa os elementos do input
 $('.event-form').submit(function(e){
     e.preventDefault()
     startCountDown()
@@ -55,9 +56,11 @@ $('.event-form').submit(function(e){
     const time = document.querySelector(".time").value
     
     const treatDate = `${date}T${time ? time : '00:00'}`
+
     saveToLocalStorage(name, treatDate)
 })
 
+// limpa o countdown caso necessário, e o inicia novamente 
 function startCountDown(id) {
     clearInterval(interval)
     interval = setInterval(() => {
@@ -65,10 +68,11 @@ function startCountDown(id) {
     }, 1000)
 }
 
+// faz o calculo de acordo com o id do countdown
 function countdownCalculator(id) {
     const countdown = JSON.parse(window.localStorage.getItem('countdowns'))
 
-    const countDate = new Date(countdown[id ? id : countdown.length-1].time).getTime();
+    const countDate = new Date(countdown[id || id === 0 ? id : countdown.length-1].time).getTime();
     const now = new Date().getTime();
     const timeLeft = countDate - now;
 
@@ -86,7 +90,7 @@ function countdownCalculator(id) {
     hoursSpan.innerText = "\n" + hours + "\n" + " hours";
     minutesSpan.innerText = "\n" + minutes + "\n" + " minutes";
     secondsSpan.innerText = "\n" + seconds + "\n" + " seconds";
-
+    // dispara ao chegar o momento do evento
     if(days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
         Swal.fire({
             title: 'Event finished!',
@@ -95,7 +99,8 @@ function countdownCalculator(id) {
             imageWidth: 160,
             imageHeight: 160,
             imageAlt: 'Party Confetti',
-          })
+          }) 
+    // avisa que o evento ja acabou
     } else if(now >= countDate) {
         daysSpan.innerText = "\n" + "D" + "\n" + " days";
         hoursSpan.innerText = "\n" + "O" + "\n" + " hours";
