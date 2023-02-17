@@ -26,17 +26,18 @@ function loadItems() {
     const countdown = JSON.parse(window.localStorage.getItem('countdowns'))
 
 if(countdown) {
-let tbody = document.getElementById('tbody')
+let eventList = document.querySelector('.event-list')
  
-tbody.innerHTML = ""
+eventList.innerHTML = ""
 
 for(let i = 0; i < countdown.length; i++) {
-    let row = tbody.insertRow()
+    let list = document.querySelector('.event-list')
 
-    let rowName = row.insertCell()
-    rowName.innerText = countdown[i].name
+    const link = document.createElement("button")
+    link.textContent = countdown[i].name
+    list.appendChild(link)
 
-    rowName.onclick = function() {
+    link.onclick = function() {
         clearInterval(interval)
         document.querySelector('.event-headline').textContent = countdown[i].name
         startCountDown(countdown[i].id)
@@ -62,6 +63,7 @@ $('.event-form').submit(function(e){
 
 // limpa o countdown caso necessário, e o inicia novamente 
 function startCountDown(id) {
+    
     clearInterval(interval)
     interval = setInterval(() => {
         countdownCalculator(id)
