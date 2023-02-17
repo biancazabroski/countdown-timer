@@ -11,53 +11,55 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+
 </head>
   <body>
     <script
     src="https://code.jquery.com/jquery-3.6.3.js"
     integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
     crossorigin="anonymous"></script>
+
    <main>
     <div class="form-container">
-        <form class="event-form">
-          <h2 class="form-title">New Event</h2>
-           <div>
-            <label class="float-left" for="name">
-              <input type="text" class="event-name" placeholder="Type your event name" required>
-            </label>
-           </div>  
-           <div>
-              <label for="date">
-                <input type="date" class="date" required>
-              </label>
-              <label for="time">
-                <input type="time" class="time">
-              </label>
-           </div>
+      <form class="event-form">
+
+        <h2 class="form-title">New Event</h2>
+
+        <div>
+          <label class="float-left" for="name">
+            <input type="text" class="event-name" placeholder="Type your event name" required>
+          </label>
+        </div>  
+        <div>
+          <label for="date">
+            <input type="date" class="date" required>
+          </label>
+          <label for="time">
+            <input type="time" class="time">
+          </label>
+        </div>
+
            <button type="submit" class="rounded btn-sm" id="start-button">Start</button>
         </form>
-      </div>
+    </div>
 
     <div class="countdown-timer mx-auto">
-        <h1 class="event-headline">event name</h1>
-            <ul>
-                <li id="days"><span>days</span></li>
-                <li id="hours"><span>hours</span></li>
-                <li id="minutes"><span>minutes</span></li>
-                <li id="seconds"><span>seconds</span></li>
-            </ul>
-            <button type="submit" class="rounded btn-sm float-right" id="clear-button">Clear</button> 
+      <h1 class="event-headline">event name</h1>
+
+      <ul>
+        <li id="days"><span>days</span></li>
+        <li id="hours"><span>hours</span></li>
+        <li id="minutes"><span>minutes</span></li>
+        <li id="seconds"><span>seconds</span></li>
+      </ul>
+
     </div>
    </main>
-   <div class="table-container">
-    <table class="table">    
-        <thead>
-            <th scope="col">Events</th>
-        </thead>
-        <tbody id="tbody">
-        </tbody>
-    </table>
+   <h3>Event List</h3>
+   <div class="event-list">
   </div>
-    <script src="src/js/countdown-main.js"></script>
+
+  <script src="src/js/countdown-main.js"></script>
+
   </body>
 </html>
